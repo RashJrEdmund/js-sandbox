@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+</head>
+  <body>
+    <form id="form" style="position: fixed; background-color: brown; top: 0; left: 0; margin: 2rem; padding: 1rem 10px; width: 300px; height: 300px; display: none;">
+      <label for="name">
+        name : <input type="text" id="name" placeholder="input name">
+      </label>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <label for="password">
+        password : <input type="password" id="password" placeholder="input password">
+      </label>
+    </form>
+
+    <button id="loginbtn" onclick="toggleform()">Login</button>
+  </body>
+
+  <script>
+    const form = document.querySelector('#form');
+
+
+    const toggleform = () => {
+      if (form.style.display === 'none') form.style.display = 'unset';
+      else form.style.display = 'none';
+    }
+
+  </script>
+</html>

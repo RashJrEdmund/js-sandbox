@@ -61,17 +61,27 @@
   Write a program to
 */
 
+// for (let i = 0; i < 8; i++) {
+//   for (let j = 0; j < 8; j++) {
+//     if(i % 2 == 0 && j % 2 !==0) {
+//       process.stdout.write('#')
+//     }
+
+//     if(i % 2 !== 0 && j % 2 ==0) {
+//       process.stdout.write('#')
+//     }
+
+//     process.stdout.write(' ');
+//   }
+//   console.log('');
+// }
+
+// or
+
+let result = ""
 for (let i = 0; i < 8; i++) {
-  for (let j = 0; j < 8; j++) {
-    if(i % 2 == 0 && j % 2 !==0) {
-      process.stdout.write('#')
-    }
-
-    if(i % 2 !== 0 && j % 2 ==0) {
-      process.stdout.write('#')
-    }
-
-    process.stdout.write(' ')
+  for (let j =0; j < 8; j++) {
+    result = (i + j) % 2 ? '#' : ' ';
   }
-  console.log('');
+  console.log(result)
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>second Calculator</title>
+  <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+<body style="padding: 2rem;">
+  <h3>test slide show:</h3>
+
+  <h1>Ford x Lamborghini</h1>
+
+  <div class="container">
+    <img id="img" src="./assets/images/yello ford ranger.jpeg" alt="image of vehicle">
+
+    <p id="indxCounter">0</p>
+
+    <div class="btns">
+      <button id="stop" onclick="stopSlide">Stop</button>
+
+      <button id="start" onclick="replaceImage()">start</button>
+    </div>
+  </div>
+  
+  <!-- <script src="./assets/scripts/script.js"></script> -->
+</body>
+  <script>
+    const indxCounter = document.querySelector('#indxCounter');
+    const image = document.querySelector('#img');
+    const imageList = [
+      './assets/images/yello ford ranger.jpeg',
+      './assets/images/2023 ford mustang.jpeg',
+      './assets/images/2017 ford mustang.jpeg',
+      './assets/images/ford bronco rapto.jpeg',
+      './assets/images/ford mustang GT.jpeg',
+      './assets/images/ford SUVs.jpeg',
+      './assets/images/Lamborghini Aventador .jpeg',
+      './assets/images/lamborghini murcielago.jpeg'
+    ]
+
+    const replaceImage = () => {
+      let ind = 0;
+
+      setInterval(() => {
+        ind = (ind === imageList.length - 1 ) ? 0 : ind + 1;
+        image.src = imageList[ind];
+
+        indxCounter.innerHTML= ind;
+      }, 3000);
+    }
+
+    const stopSlide = () => {
+      console.log('stopping slide');
+    }
+
+  </script>
+</html>
