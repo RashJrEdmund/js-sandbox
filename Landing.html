@@ -22,14 +22,14 @@
       </label>
     </form>
 
-    <button id="loginbtn" onclick="toggleform()">Login</button>
+    <button id="loginbtn" onclick="startSlide()">Login</button>
   </body>
 
   <script>
     const form = document.querySelector('#form');
 
 
-    const toggleform = () => {
+    const startSlide = () => {
       if (form.style.display === 'none') form.style.display = 'unset';
       else form.style.display = 'none';
     }
