@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>second Calculator</title>
+  <title>photo slide</title>
   <style>
     h3 {
       color: green;
@@ -14,11 +14,6 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-    }
-
-    img {
-      position: relative;
-      bottom: -300px;
     }
   </style>
 </head>
@@ -64,7 +59,7 @@
       intervalId = setInterval(() => {
         ind = (ind === imageList.length - 1 ) ? 0 : ind + 1;
         image.src = imageList[ind];
-        slideContainer.style.backgroundImage = `url('${imageList[ind - 1]}')`
+        // slideContainer.style.backgroundImage = `url('${imageList[ind - 1]}')`;
 
         indxCounter.innerHTML = ind;
       }, 2000);
