@@ -14,7 +14,7 @@ const factorial = (num) => {
     result *= i
   }
 
-  return result
+  return result;
 }
 
 console.log(factorial(5))
