@@ -37,19 +37,15 @@
 
   <div class="container">
     <span id="out-put" class="range">0</span>
-    <input type="range" class="range-selector" value="0" min="0" max="1000" onchange="showRange(this)">
+    <input type="range" class="range-selector" value="0" min="0" max="1000" oninput="showRange(this)">
   </div>
 </body>
 
 <script>
   console.clear()
-  const rangeSelector = document.querySelector('.range-selector');
-  console.log(rangeSelector);
-  document.querySelector('.range').innerHTML = rangeSelector.value
 
-  const showRange = (e) => {
-    console.log('this e', e)
-    document.querySelector('.range').innerHTML = rangeSelector.value
+  const showRange = (el) => {
+    document.querySelector('.range').innerHTML = el.value
   }
 </script>
 </html>
