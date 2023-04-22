@@ -5,6 +5,10 @@ const Cars = function(nom, pistons, max_gear, brand) {
   this.brand = brand
 }
 
+class Locomotive {
+  
+}
+
 const myFirstCar = new Cars('Ford Mustang', 8, 6, 'Ford');
 const mySecondCar = new Cars('Mucieliago', 8, 6, 'Lamborghini');
 
