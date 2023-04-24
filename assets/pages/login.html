@@ -44,12 +44,14 @@
         return;
       }
       else {
+        // const myRegex = /([0-9])\w+([@.$#!%^&*()\[\]{};:'",<.>/?\\|~`_])/g
+        const myRegex = /[@.$#!%^&*()\[\]{};:'",<.>/?\\|~`_][a-z]/g
         if(password.length < 8) {
           message.innerHTML = 'password must be atleast 8 characters';
           clearMessage();
           return;
         }
-        else if (!/[0-9][a-zA-Z][\@|\.|\#|\_|\$]/.test(password)) {
+        else if (!myRegex.test(password)) {
           message.innerHTML = 'password must contain a special character or number';
           clearMessage();
           return;
