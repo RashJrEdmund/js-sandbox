@@ -4,17 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css">
     <title>Login</title>
-    <style>
-
-        a {
-          color: #1e91d8;
-          cursor: pointer;
-        }
-    </style>
   </head>
   <body>
-    <nav id="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem">
+    <nav id="nav">
+      <!-- script's gonna fill this-->
     </nav>
 
     <form
@@ -45,58 +40,5 @@
     </button>
   </body>
 
-  <script type="module">
-    // script starts here
-    import { createNavBar } from "../../components/index.js"
-    createNavBar("login form");
-
-
-    const addStyle = (id, attri, sty) => {
-      document.getElementById(id).style[attri] = sty;
-    };
-
-    const removeStyle = (id, attri) => {
-      document.getElementById(id).style[attri] = 'unset';
-    };
-
-    const clearMessage = async () =>
-      setTimeout(() => (document.querySelector("p").innerHTML = ""), 3000);
-
-    const handleForm = async () => {
-      const name = document.querySelector("#name").value;
-      const password = document.querySelector("#password").value;
-      const message = document.querySelector("p");
-
-      if (!name || !password) {
-        message.innerHTML = "input all fields";
-        clearMessage();
-        return;
-      } else {
-        // const myRegex = /([0-9])\w+([@.$#!%^&*()\[\]{};:'",<.>/?\\|~`_])/g
-        const myRegex = /[@.$#!%^&*()\[\]{};:'",<.>/?\\|~`_][a-z]/g;
-        if (password.length < 8) {
-          message.innerHTML = "password must be atleast 8 characters";
-          clearMessage();
-          return;
-        } else if (!myRegex.test(password)) {
-          message.innerHTML =
-            "password must contain a special character or number";
-          clearMessage();
-          return;
-        }
-
-        message.innerHTML = "form Validated";
-
-        await clearMessage().then(() =>
-          setTimeout(() => (message.innerHTML = "Logging in..."), 3000)
-        );
-      }
-    };
-
-    const login_btn = document.getElementById("loginbtn");
-    login_btn.onclick = handleForm;
-
-    login_btn.onmouseover = addStyle('loginbtn', 'backgroundColor', 'gold');
-    login_btn.onmouseout = removeStyle('loginbtn', 'backgroundColor');
-  </script>
+  <script type="module" src="./index.js"></script>
 </html>

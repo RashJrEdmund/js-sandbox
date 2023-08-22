@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
     <title>intersection-observer</title>
-    <style>
-      a {
-        color: #1e91d8;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
-    <nav id="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem;">
+    <nav id="nav">
+      <!-- script's gonna fill this-->
     </nav>
 
-    <main>
-        hello world
+    <main  id="card_container">
+      <div class="card">This is the first card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is a card</div>
+      <div class="card">This is the last card</div>
     </main>
   </body>
 
-  <script type="module">
-    // script starts here
-    import { createNavBar } from "../../components/index.js"
-
-    createNavBar("intersection observer");
-
-    const picker = document.querySelector('.picker');
-    const hex = document.querySelector('.hex-code');
-
-    const changeColor = () => {
-      console.log('color changing')
-      hex.value = picker.value;
-      document.querySelector('.out-put').style.backgroundColor = picker.value;
-    }
-  </script>
+  <script type="module" src="./index.js"></script>
 </html>
