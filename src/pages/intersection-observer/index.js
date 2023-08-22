@@ -42,8 +42,7 @@ const last_card_observer = new IntersectionObserver((entries) => {
 
     if (!last_card.isIntersecting) return
 
-    simulateFetch() // was trying to simulate a fetch. but there's an issue with the promise.
-        .then((res) => res)
+    simulateFetch(1000) // was trying to simulate a fetch. but there's an issue with the promise.
         .then(res => console.log(res))
         .catch(err => console.warn(err))
 

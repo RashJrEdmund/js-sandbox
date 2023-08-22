@@ -1,14 +1,14 @@
-export const simulateFetch = () => new Promise((resolve, reject) => {
-    resolve(() => {
-       return setTimeout(() => {
-            return "done fetching..."
-        }, 1000);
-    })
+export const simulateFetch = (fetch_time) => {
+    return new Promise((resolve, reject) => {
+        resolve(() => {
+            setTimeout(() => resolve("done fetching..."), fetch_time)
+        })
 
-    reject((er) => {
-        throw new Error(`some error occured ${er}`);
+        reject((er) => {
+            throw new Error(`some error occured ${er}`);
+        })
     })
-})
+}
 
 export const generateNewCards = ({ n, anime_observer }) => {
     console.log(`loading ${n} more cards...`)
