@@ -16,33 +16,36 @@
       height: 200px;
       width: 200px;
     }
+
+    a {
+      color: #1e91d8;
+      cursor: pointer;
+    }
   </style>
 </head>
-<body>
-  <div class="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem;">
-    <a href="../../index.html">Home</a>
-
-    <a href="./slideshow.html">slide show</a>
-
-      <a href="./rangeSelector.html">range selector</a>
-
-      <a href="./login.html">login form</a>
-  </div>
+  <body>
+    <nav id="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem;">
+    </nav>
 
 
-  <div class="conlor-container">
-    <span>
-      <input type="text" class="hex-code">
+    <div class="conlor-container">
+      <span>
+        <input type="text" class="hex-code">
 
-      <input type="color" class="picker" oninput="changeColor()">
-    </span>
+        <input type="color" id="picker">
+      </span>
 
-    <div class="out-put"></div>
-  </div>
-</body>
+      <div class="out-put"></div>
+    </div>
+  </body>
 
-  <script>
-    const picker = document.querySelector('.picker');
+  <script type="module">
+    // script starts here
+    import { createNavBar } from "../../components/index.js"
+
+    createNavBar("color picker");
+
+    const picker = document.getElementById("picker")
     const hex = document.querySelector('.hex-code');
 
     const changeColor = () => {
@@ -50,5 +53,7 @@
       hex.value = picker.value;
       document.querySelector('.out-put').style.backgroundColor = picker.value;
     }
+
+    picker.oninput = changeColor
   </script>
 </html>

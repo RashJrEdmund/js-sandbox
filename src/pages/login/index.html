@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+    <title>Login</title>
+    <style>
+
+        a {
+          color: #1e91d8;
+          cursor: pointer;
+        }
+    </style>
   </head>
   <body>
-    <div class="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem">
-      <a href="../../index.html">Home</a>
-
-      <a href="./slideshow.html">slide show</a>
-
-      <a href="./color-picker.html">color picker</a>
-
-      <a href="./rangeSelector.html">range selector</a>
-    </div>
+    <nav id="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem">
+    </nav>
 
     <form
       id="form"
@@ -40,15 +40,17 @@
     <button
       id="loginbtn"
       style="margin: 20px auto; border: none; padding: 10px; transition: 0.4s;"
-      onclick="handleForm()"
-      onmouseover="addStyle('loginbtn', 'backgroundColor', 'gold')"
-      onmouseout="removeStyle('loginbtn', 'backgroundColor')"
     >
       Login
     </button>
   </body>
 
-  <script>
+  <script type="module">
+    // script starts here
+    import { createNavBar } from "../../components/index.js"
+    createNavBar("login form");
+
+
     const addStyle = (id, attri, sty) => {
       document.getElementById(id).style[attri] = sty;
     };
@@ -90,5 +92,11 @@
         );
       }
     };
+
+    const login_btn = document.getElementById("loginbtn");
+    login_btn.onclick = handleForm;
+
+    login_btn.onmouseover = addStyle('loginbtn', 'backgroundColor', 'gold');
+    login_btn.onmouseout = removeStyle('loginbtn', 'backgroundColor');
   </script>
 </html>

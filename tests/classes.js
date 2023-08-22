@@ -13,7 +13,7 @@ class MyClass {
 }
 
 class SecondClass {
-  constructor() {
+  constructor() { // this is the first thing ran whenever an instance of this class(any) is created.
     this.myClass = new MyClass();
   }
 

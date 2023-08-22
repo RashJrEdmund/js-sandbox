@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>photo slide</title>
+  <style>
+    #slide-container {
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    a {
+        color: #1e91d8;
+        cursor: pointer;
+      }
+  </style>
+</head>
+  <body>
+    <nav id="nav" style="display: flex; gap: 20px; margin: 10px 0 3rem;"></nav>
+
+    <h3>test slide show:</h3>
+
+    <h1>Ford x Lamborghini</h1>
+
+    <div id="slide-container">
+      <img id="img" src="./images/yello ford ranger.jpeg" alt="image of vehicle">
+
+      <p id="indxCounter">0</p>
+
+      <div class="btns">
+        <button id="stop">Stop</button>
+
+        <button id="start">start</button>
+      </div>
+    </div>
+    
+    <!-- <script src="./assets/scripts/script.js"></script> -->
+  </body>
+
+  <script type="module">
+    // script starts here
+    import { createNavBar } from "../../components/index.js"
+    createNavBar("slide show");
+
+    const slideContainer = document.querySelector('#slide-container');
+    const indxCounter = document.querySelector('#indxCounter');
+    const image = document.querySelector('#img');
+    const imageList = [
+      './images/yello ford ranger.jpeg',
+      './images/2023 ford mustang.jpeg',
+      './images/2017 ford mustang.jpeg',
+      './images/ford bronco rapto.jpeg',
+      './images/ford mustang GT.jpeg',
+      './images/ford SUVs.jpeg',
+      './images/Lamborghini Aventador .jpeg',
+      './images/lamborghini murcielago.jpeg'
+    ];
+
+    let intervalId;
+  
+    const replaceImage = () => {
+      let ind = 0;
+
+      intervalId = setInterval(() => {
+        ind = (ind === imageList.length - 1 ) ? 0 : ind + 1;
+        image.src = imageList[ind];
+        // slideContainer.style.backgroundImage = `url('${imageList[ind - 1]}')`;
+
+        indxCounter.innerHTML = ind;
+      }, 2000);
+    }
+
+    const stopSlide = () => {
+      console.log('stopping slide', intervalId);
+      clearInterval(intervalId)
+    }
+
+    document.getElementById("start").onclick = () => replaceImage()
+
+    document.getElementById("stop").onclick = () => stopSlide()
+  </script>
+</html>

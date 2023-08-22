@@ -4,46 +4,43 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Rash' Play_Ground.Js</title>
   <style>
-    .links {
+    #links {
       border: 1px solid #000;
+      width: -moz-fit-content;
       width: fit-content;
       padding: 10px;
     }
+
+    a {
+      color: #1e91d8;
+      cursor: pointer;
+    }
   </style>
 </head>
-<body>
+<body style="font-family: sans-serif;">
   <div class="container">
-    <h3>Play Ground</h3>
+    <h3>Rash' Play_Ground.Js</h3>
 
-    <div class="links">
-      <!-- <a href="./assets/pages/slideshow.html">slide show</a> <br /> <br />
-
-      <a href="./assets/pages/color-picker.html">color picker</a> <br /> <br />
-
-      <a href="./assets/pages/rangeSelector.html">range selector</a> <br /> <br />
-
-      <a href="./assets/pages/login.html">login form</a>
-
-      <a href="./assets/pages/login.html">login form</a> -->
-    </div>
+    <div id="links"></div>
   </div>
 </body>
-  <script>
+
+  <script type="module">
     const PATHS= [
-      {link: "slideshow", name: "slide show"},
-      {link: "color-picker", name: "color picker"},
-      {link:"rangeSelector", name: "range selector"},
-      {link:"login", name: "login form"},
-      {link: "intersection-observer", name: "intersection observer"},
+      {folder_name: "slideshow", name: "slide show"},
+      {folder_name: "color-picker", name: "color picker"},
+      {folder_name:"rangeSelector", name: "range selector"},
+      {folder_name:"login", name: "login form"},
+      {folder_name: "intersection-observer", name: "intersection observer"},
     ];
 
-    const links = document.querySelector(".links");
+    const links = document.getElementById("links");
 
-    PATHS.forEach(({link, name}) => {
+    PATHS.forEach(({folder_name, name}) => {
       const a_tag = document.createElement("a");
-      a_tag.href = `./assets/pages/${link}.html`;
+      a_tag.href = `./src/pages/${folder_name}/index.html`;
 
       a_tag.innerHTML = name;
 
