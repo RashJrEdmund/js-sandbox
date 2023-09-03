@@ -1,5 +1,5 @@
 const createFooter = () => {
-    console.log("footer...")
+    console.log("building footer...")
 }
 
 export default createFooter;
