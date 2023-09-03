@@ -1,4 +1,4 @@
-const createNavBar = (exception) => {
+const createNavBar = (currentRoute) => {
     console.log("creating navbar")
 
     const nav_bar = document.getElementById("nav")
@@ -22,7 +22,7 @@ const createNavBar = (exception) => {
 
         nav_bar.appendChild(a_tag)
 
-        if (name === exception) {
+        if (name === currentRoute) {
             a_tag.style = "color: green; border-bottom: 1px solid green";
             return; // to color only it's route
         }
