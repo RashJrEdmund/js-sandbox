@@ -71,7 +71,6 @@ const binarySearchApproach = (ranked, player) => {
 }
 
 
-
 console.time("getRanking: compiled in")
 const leaderBoard = getRanking([...initialBoard, ...p1Scores]) // getRanking method is by far the heaviest task
 console.log(leaderBoard)
@@ -89,4 +88,4 @@ createSpacing();
 console.time("binaryLeaderBoard: compiled in")
 const binaryLeaderBoard = binarySearchApproach(initialBoard, p1Scores) // getRanking method is by far the heaviest task
 console.log(binaryLeaderBoard)
-console.timeEnd("binaryLeaderBoard: compiled in")
+console.timeEnd("binaryLeaderBoard: compiled in");
