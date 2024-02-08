@@ -48,7 +48,7 @@ const isPalindrome = (word) => {
 // or
 
 // const isPalindrome = (word) => {
-//   if(typeof word === "number") {
+//   if(typeof word === 'number') {
 //     console.log('word', word.toString().split('').reverse().join(' '));
 //     return word === +word.toString().split('').reverse().join()
 //   }

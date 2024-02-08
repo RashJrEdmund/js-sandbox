@@ -49,7 +49,7 @@ class LinkedList {
         if (!node && this.head) node = this.head;
         if (!node) return;
 
-        console.log("Value =>", node.value);
+        console.log('Value =>', node.value);
         if (node.next) this.print(node.next);
     }
 
@@ -76,8 +76,8 @@ class LinkedList {
         const traverse = (node, parent) => {
             if (node.next) traverse(node.next, node);
             if (!closure(node.value)) {
-                console.log("node=>", node)
-                console.log("parent=>", parent)
+                console.log('node=>', node)
+                console.log('parent=>', parent)
                 if (!parent) {
                     this.head = node.next;
                     node.next = null;
@@ -85,8 +85,8 @@ class LinkedList {
                     parent.next = node.next;
                     node.next = null;
                 }
-                console.log("After node=>", node)
-                console.log("After parent=>", parent?.next?.value)
+                console.log('After node=>', node)
+                console.log('After parent=>', parent?.next?.value)
             }
         }
 
@@ -98,12 +98,12 @@ const numbers = new LinkedList(0, 0, 6, 8, 2, 0);
 numbers.push(1);
 numbers.push(3);
 numbers.print();
-console.log("--------");
+console.log('--------');
 numbers.push(2);
 numbers.print();
-console.log("popped", numbers.pop());
+console.log('popped', numbers.pop());
 console.log(numbers.peek());
-console.log("at 1", numbers.get(1));
+console.log('at 1', numbers.get(1));
 numbers.filter((num) => num > 2);
-console.log("--------");
+console.log('--------');
 numbers.print();

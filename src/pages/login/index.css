@@ -1,0 +1,6 @@
+@import url('../../../style.default.css');
+
+button {
+  background-color: burlywood;
+  padding: 10px;
+}

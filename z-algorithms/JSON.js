@@ -1,6 +1,6 @@
 const obj = {
     val: 1n,
-    name: "big number",
+    name: 'big number',
     sub: {
         sum: 2,
         sub_sub: {

@@ -1,8 +1,8 @@
-import { createNavBar } from "../../components/index.js"
+import { createNavBar } from '../../components/index.js'
 
-createNavBar("color picker");
+createNavBar('color picker');
 
-const picker = document.getElementById("picker")
+const picker = document.getElementById('picker')
 const hex = document.querySelector('.hex-code');
 
 const changeColor = () => {

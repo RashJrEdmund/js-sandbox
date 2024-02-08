@@ -1,7 +1,7 @@
 export const simulateFetch = (fetch_time) => {
     return new Promise((resolve, reject) => {
         resolve(() => {
-            setTimeout(() => resolve("done fetching..."), fetch_time)
+            setTimeout(() => resolve('done fetching...'), fetch_time)
         })
 
         reject((er) => {
@@ -12,13 +12,13 @@ export const simulateFetch = (fetch_time) => {
 
 export const generateNewCards = ({ n, anime_observer }) => {
     console.log(`loading ${n} more cards...`)
-    const card_container = document.getElementById("card_container");
+    const card_container = document.getElementById('card_container');
 
     for (let i = 0; i < n; i++) {
-        const new_card = document.createElement("div");
-        new_card.className = "card";
+        const new_card = document.createElement('div');
+        new_card.className = 'card';
 
-        new_card.innerHTML = "New Card";
+        new_card.innerHTML = 'New Card';
 
         anime_observer.observe(new_card)
 

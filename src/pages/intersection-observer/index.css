@@ -1,3 +1,5 @@
+@import url('../../../style.default.css');
+
 #card_container {
     background-color: grey;
     width: min(500px, 97vw);

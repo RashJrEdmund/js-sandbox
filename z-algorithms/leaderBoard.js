@@ -4,7 +4,7 @@
 const initialBoard = [100, 100, 50, 40, 40, 20, 10]
 const p1Scores = [5, 25, 50, 120]
 
-const createSpacing = () => console.log("\n \n") // for creating space between results.
+const createSpacing = () => console.log('\n \n') // for creating space between results.
 
 const getRanking = (arr) => {
     const map = {};
@@ -71,21 +71,21 @@ const binarySearchApproach = (ranked, player) => {
 }
 
 
-console.time("getRanking: compiled in")
+console.time('getRanking: compiled in')
 const leaderBoard = getRanking([...initialBoard, ...p1Scores]) // getRanking method is by far the heaviest task
 console.log(leaderBoard)
-console.timeEnd("getRanking: compiled in")
+console.timeEnd('getRanking: compiled in')
 
 createSpacing();
 
-console.time("forLoopleaderBoard: compiled in")
+console.time('forLoopleaderBoard: compiled in')
 const forLoopLeaderBoard = rankWithforLoopRecuApproach(initialBoard, p1Scores) // getRanking method is by far the heaviest task
 console.log(forLoopLeaderBoard)
-console.timeEnd("forLoopleaderBoard: compiled in")
+console.timeEnd('forLoopleaderBoard: compiled in')
 
 createSpacing();
 
-console.time("binaryLeaderBoard: compiled in")
+console.time('binaryLeaderBoard: compiled in')
 const binaryLeaderBoard = binarySearchApproach(initialBoard, p1Scores) // getRanking method is by far the heaviest task
 console.log(binaryLeaderBoard)
-console.timeEnd("binaryLeaderBoard: compiled in");
+console.timeEnd('binaryLeaderBoard: compiled in');

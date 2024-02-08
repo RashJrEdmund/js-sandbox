@@ -1,5 +1,12 @@
+@import url('../../../style.default.css');
+
 #slide-container {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+button {
+    padding: 6px 15px;
+    margin: 10px 10px 0 0;
 }

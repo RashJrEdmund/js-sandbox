@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Rash' Play_Ground.Js</title>
   <style>
     #links {
@@ -19,27 +19,21 @@
     }
   </style>
 </head>
-<body style="font-family: sans-serif;">
-  <div class="container">
+<body style='font-family: sans-serif;'>
+  <div class='container'>
     <h3>Rash' Play_Ground.Js</h3>
 
-    <div id="links"></div>
+    <div id='links'></div>
   </div>
 </body>
 
-  <script type="module">
-    const PATHS= [
-      {folder_name: "slideshow", name: "slide show"},
-      {folder_name: "color-picker", name: "color picker"},
-      {folder_name:"rangeSelector", name: "range selector"},
-      {folder_name:"login", name: "login form"},
-      {folder_name: "intersection-observer", name: "intersection observer"},
-    ];
+  <script type='module'>
+    import { PATHS } from './src/constants/nav-constants.js';
 
-    const links = document.getElementById("links");
+    const links = document.getElementById('links');
 
     PATHS.forEach(({folder_name, name}) => {
-      const a_tag = document.createElement("a");
+      const a_tag = document.createElement('a');
       a_tag.href = `./src/pages/${folder_name}/index.html`;
 
       a_tag.innerHTML = name;
@@ -47,6 +41,6 @@
       links.append(a_tag)
       links.innerHTML += '<br /> <br />'
 
-    })
+    });
   </script>
 </html>

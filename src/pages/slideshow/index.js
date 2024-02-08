@@ -1,5 +1,5 @@
-import { createNavBar } from "../../components/index.js"
-createNavBar("slide show");
+import { createNavBar } from '../../components/index.js'
+createNavBar('slide show');
 
 const slideContainer = document.querySelector('#slide-container');
 const indxCounter = document.querySelector('#indxCounter');
@@ -34,6 +34,6 @@ const stopSlide = () => {
     clearInterval(intervalId)
 }
 
-document.getElementById("start").onclick = () => replaceImage()
+document.getElementById('start').onclick = () => replaceImage()
 
-document.getElementById("stop").onclick = () => stopSlide()
+document.getElementById('stop').onclick = () => stopSlide()
