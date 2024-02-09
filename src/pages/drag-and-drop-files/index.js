@@ -55,7 +55,7 @@ const displayFile = (file, e) => {
     console.log('this is a video');
 
     img.src = ICON_OBJECT.video;
-  } else if (file.type.startsWith(FILE_TYPES.application)) {
+  } else if (file.type.startsWith(FILE_TYPES.application) || !file.type) {
     console.log('this is an application');
 
     img.src = ICON_OBJECT.application;
