@@ -1,0 +1,43 @@
+@import url('../../../style.default.css');
+
+main {
+  width: min(100%, 97vw);
+}
+
+h2 {
+  margin: 0 0 2rem;
+}
+
+.drop-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 400px);
+  height: min(400px, 70vh);
+  border: 1px solid steelblue;
+  background-color: blanchedalmond;
+  margin: 0 auto 1rem;
+}
+
+.drop-box .loading {
+  color: cornflowerblue;
+  white-space: nowrap;
+}
+
+.file-display {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.file-display img {
+  border: 0.5px solid cornflowerblue;
+  width: 100%;
+  min-height: 200px;
+  /* max-height: 200px; */
+}
+
+.file-display img.error {
+  border: 1px solid tomato;
+}

@@ -4,7 +4,8 @@ const PATHS = [
   { folder_name: 'color-picker', name: 'color picker' },
   { folder_name: 'rangeSelector', name: 'range selector' },
   { folder_name: 'intersection-observer', name: 'intersection observer' },
-  { folder_name: 'drag-and-drop', name: 'drag and drop' }
+  { folder_name: 'drag-and-drop-sorting', name: 'drag and drop sorting' },
+  { folder_name: 'drag-and-drop-files', name: 'drag and drop files' },
 ];
 
 export {
