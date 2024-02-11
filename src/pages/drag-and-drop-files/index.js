@@ -1,22 +1,12 @@
 import { createNavBar } from '../../components/index.js'
 import { wait } from '../../utils/utils.js';
+import { isDirectory, isFile } from './files.service.js';
+import { FILE_TYPES, ICON_OBJECT } from './files.constants.js';
 
 createNavBar('drag and drop files');
 
 const dropBox = document.querySelector('.drop-box');
 const fileDisplayContainer = document.querySelector('.file-display');
-
-const ICON_OBJECT = {
-  img_error: 'https://community.atlassian.com/t5/image/serverpage/image-id/157040i289B328EEF18671A/image-size/large?v=v2&px=999',
-  video: 'https://t4.ftcdn.net/jpg/02/65/84/77/360_F_265847744_xfvDgrqK0pPApYI7JKse0NIHImnivkCi.jpg',
-  application: 'https://learn.microsoft.com/en-us/windows/apps/design/signature-experiences/images/iconography_anatomy1.svg',
-}
-
-const FILE_TYPES = {
-  image: 'image',
-  video: 'video',
-  application: 'application',
-};
 
 dropBox.addEventListener('dragover', (e) => {
   e.preventDefault();
@@ -24,29 +14,46 @@ dropBox.addEventListener('dragover', (e) => {
 
 dropBox.addEventListener('drop', async (e) => {
   e.preventDefault();
-  
+
   const files = e.dataTransfer.files;
 
-  const loading = dropBox.querySelector('span');
+  const items = e.dataTransfer.items;
 
-  loading.innerHTML = `uploading ${files.length} file${files.length > 1 ? 's': ''}`;
+  // console.log(e.dataTransfer);
 
-  await wait(1500);
+  const dropText = dropBox.querySelector('.drop-text');
+
+  dropText.innerHTML = `uploading ${files.length} file${files.length > 1 ? 's' : ''}`;
 
   for (let i = 0; i < files.length; i++) {
-    displayFile(files[i], e);
+    console.log('file', files[i]);
+    console.log('tiem', items[i]);
+    // console.log('is directory', isDirectory(items[i]));
+    // console.log('is File', isFile(items[i]));
+    console.log('webkit entry', items[i].webkitGetAsEntry());
+  };
+
+  // await wait(1500);
+
+  for (let i = 0; i < files.length; i++) {
+    // console.log(items[i]);
+    computeFile(e, files[i], items[i]);
   }
 
-  loading.innerHTML = '';
+  dropText.innerHTML = 'Drop file(s) here';
 });
 
-const displayFile = (file, e) => {
+const computeFile = (e, file, item) => {
   const img = document.createElement('img');
 
-  if (file.type.startsWith(FILE_TYPES.image)) {
+  // console.log('item', item);
+
+  if (isDirectory(item)) {
+    img.src = ICON_OBJECT.folder;
+  } else if (file.type.startsWith(FILE_TYPES.image)) {
     img.src = URL.createObjectURL(file);
 
-    img.onerror =  (e) => {
+    img.onerror = (e) => {
       // console.warn(e);
 
       img.src = ICON_OBJECT.img_error;
@@ -58,10 +65,27 @@ const displayFile = (file, e) => {
   } else if (file.type.startsWith(FILE_TYPES.application) || !file.type) {
     console.log('this is an application');
 
-    img.src = ICON_OBJECT.application;
+    img.src = ICON_OBJECT.file;
   } else {
+    img.src = ICON_OBJECT.file;
     e.preventDefault();
   };
 
-  fileDisplayContainer.appendChild(img);
+  displayFileFigure(file, img);
+};
+
+const displayFileFigure = (file, img) => {
+  const figure = document.createElement('figure');
+
+  const figCaption = document.createElement('figcaption');
+
+  figCaption.innerHTML = file.name || '';
+
+  figCaption.title = file.name || '';
+
+  figure.appendChild(img);
+
+  figure.appendChild(figCaption);
+
+  fileDisplayContainer.appendChild(figure);
 };

@@ -1,5 +1,9 @@
 @import url('../../../style.default.css');
 
+body {
+  background-color: #cccccc1d;
+}
+
 main {
   width: min(100%, 97vw);
 }
@@ -12,14 +16,14 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: min(100%, 400px);
-  height: min(400px, 70vh);
+  width: min(100%, 700px);
+  height: min(450px, 70vh);
   border: 1px solid steelblue;
   background-color: blanchedalmond;
   margin: 0 auto 1rem;
 }
 
-.drop-box .loading {
+.drop-box .drop-text {
   color: cornflowerblue;
   white-space: nowrap;
 }
@@ -31,13 +35,29 @@ h2 {
   gap: 10px;
 }
 
-.file-display img {
+.file-display figure {
+  width: 100%;
+  height: fit-content;
+}
+
+.file-display figure img {
   border: 0.5px solid cornflowerblue;
   width: 100%;
   min-height: 200px;
   /* max-height: 200px; */
+
+  &.error {
+    border: 1px solid tomato;
+  }
 }
 
-.file-display img.error {
-  border: 1px solid tomato;
+.file-display figure figcaption {
+  background-color: #cccccc;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
 }
