@@ -16,11 +16,11 @@ const createNavBar = (currentRoute) => {
 
         a_tag.innerHTML = name;
 
-        a_tag.style = 'color: #1e91d8;'
+        a_tag.style = 'color: #1e91d8;';
 
-        nav_bar.appendChild(a_tag)
+        nav_bar.appendChild(a_tag);
 
-        if (name === currentRoute) {
+        if (name.toLowerCase() === currentRoute.toLowerCase()) {
             a_tag.style = 'color: green; border-bottom: 1px solid green';
             return; // to color only it's route
         }

@@ -1,3 +1,7 @@
+:root {
+  --twitter_blue: #1e91d8;
+}
+
 * {
   margin: 0;
   padding: 0;

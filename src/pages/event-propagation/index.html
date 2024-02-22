@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel='stylesheet' href='./index.css'>
+  <title>Event Propagation</title>
+</head>
+
+<body>
+  <nav id='nav'>
+    <!-- nav script -->
+  </nav>
+
+  <main>
+    <h1>Event Propagation</h1>
+
+    <section class='message'>
+      message will appear here
+
+      <span>
+        messages for propagation
+      </span>
+    </section>
+
+    <div class='container1'>
+      Container 1
+      <button>Stop propagation 1</button>
+
+      <div class='container2'>
+        Container 2
+        <button>Stop propagation 2</button>
+
+        <Container2 class='container3'>
+          Container 3
+
+          <button>Stop propagation 3</button>
+        </Container2>
+      </div>
+    </div>
+  </main>
+
+  <footer id='footer'>
+    <!-- footer script's gonna fill this -->
+  </footer>
+</body>
+<script type='module' src='./index.js'></script>
+
+</html>
