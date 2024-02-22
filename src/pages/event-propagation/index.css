@@ -1,24 +1,5 @@
 @import url('../../../style.default.css');
 
-main .message {
-  width: min(97vw, 600px);
-  padding: 10px;
-  color: gray;
-  margin: 1rem 0;
-
-  span {
-    border: 0.5px dashed #000;
-    padding: 5px 10px;
-    min-width: 100px;
-    margin-left: 10px;
-    color: #000;
-
-    &.flash {
-      border: 0.5px dashed var(--twitter_blue);
-    }
-  }
-}
-
 .container1 {
   background-color: #ccc;
   max-width: min(97vw, 600px);
@@ -28,7 +9,7 @@ main .message {
   * {
     display: flex;
     flex-direction: column;
-    padding: 4rem 2rem;
+    padding: 2rem;
     width: 100%;
     margin: 1rem 0 0;
   }
@@ -42,20 +23,8 @@ main .message {
       position: relative;
     }
   }
+}
 
-  button {
-    width: fit-content;
-    height: fit-content;
-    padding: 5px 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 5px;
-    border-radius: 5px;
-
-    &.stopped {
-      background-color: black;
-      color: #fff;
-    }
-  }
+h2 {
+  margin: 2rem 0 5px;
 }

@@ -16,29 +16,32 @@
   <main>
     <h1>Event Propagation</h1>
 
-    <section class='message'>
-      message will appear here
-
-      <span>
-        messages for propagation
-      </span>
-    </section>
-
+    <p>Click any container and check console</p>
     <div class='container1'>
       Container 1
-      <button>Stop propagation 1</button>
 
       <div class='container2'>
         Container 2
-        <button>Stop propagation 2</button>
 
         <Container2 class='container3'>
           Container 3
-
-          <button>Stop propagation 3</button>
         </Container2>
       </div>
     </div>
+
+    <h2>Notes</h2>
+
+    <pre>
+      In the W3C model, event's will capture from parent to target, then bubble up from target to parent.
+      It is possible to tap into these different stages of this movement as if it were a components lifecycle.
+
+      the 3rd boolean parameter of the addEventListener function (useCapture) determines wether or not to run
+      the function in the capture (or bubbling) stage.
+
+      if true, the function will be run in the capture stage, else if false or nothing at all, the function will
+      be run in the bubbling stage
+      checkout this documentation on <a href='https://www.quirksmode.org/js/events_order.html' target='_blank'>event orders</a>
+    </pre>
   </main>
 
   <footer id='footer'>
