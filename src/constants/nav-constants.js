@@ -7,6 +7,7 @@ const PATHS = [
   { folder_name: 'drag-and-drop-sorting', name: 'drag and drop sorting' },
   { folder_name: 'drag-and-drop-files', name: 'drag and drop files' },
   { folder_name: 'event-propagation', name: 'event propagation' },
+  { folder_name: 'stop-watch', name: 'stop watch' },
 ];
 
 export {
