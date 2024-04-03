@@ -5,4 +5,4 @@
 
 - build simple ui (without necessarily painting it with css);
 
-- [link to deployment](https://rashjredmund.github.io/js-with-II-batch/)
+- [link to deployment](https://rashjredmund.github.io/js-sandbox/)
